@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Transforms</name>
+    </assembly>
+    <members>
+        <member name="T:Transforms.Transform">
+            <summary>
+            Static Class containing all 'Transform' functions. Arguments named 't' should all be within the range of 0-1.
+            <para> The argument 't' is the variable value that you input into the equation, 't' being an interpolant value. </para>
+            </summary>
+        </member>
+        <member name="M:Transforms.Transform.Sine(System.Single,System.Single,System.Single,System.Single)">
+            <summary> Returns the result of Sin(t), normalized such that one wave period occurs over an increment of 1. </summary>
+            <param name="t"> Input value, used like interpolation, should be between 0-1. </param>
+            <param name="xOffset"> X offset for sine wave. </param>
+            <param name="magnitude"> The most extreme y-value deviation from the midline that this function will return. </param>
+            <param name="midline"> The 'y-value' for the center between the peaks and troughs of the wave. </param>
+        </member>
+        <member name="M:Transforms.Transform.Flip(System.Single)">
+            <summary> Flips given 't' value. </summary>
+            <param name="t"> Value to flip. </param>
+        </member>
+        <member name="M:Transforms.Transform.Square(System.Single)">
+            <summary> Squares given 't' value. </summary>
+            <param name="t"> Value to square. </param>
+        </member>
+        <member name="M:Transforms.Transform.Mix(System.Single,System.Single,System.Single)">
+            <summary> Returns a mix of values 'a' and 'b', with the given mult applied to 'b', and (1 - mult) applied to 'a'. </summary>
+            <param name="a"> The first input value. </param>
+            <param name="b"> The second input value. </param>
+            <param name="bMult"> The value to multiply 'b' by. Must be within the 0-1 range. </param>
+            <returns></returns>
+        </member>
+        <member name="M:Transforms.Transform.Crossfade(System.Single,System.Single,System.Single)">
+            <summary> Returns a value which is a mix of [t] between [a] and [b].  </summary>
+            <param name="a"> The value to return when 't' equals 0. </param>
+            <param name="b"> The value to return when 't' equals 1. </param>
+            <param name="t"> Value to fade from 'a' to 'b' with. </param>
+        </member>
+        <member name="M:Transforms.Transform.Scale(System.Single,System.Single)">
+            <summary> Multiplies 't' by the given value 'a'. </summary>
+            <param name="t"> The value to multiply by 'a'. </param>
+            <param name="a"> The value to multiply 't' by. </param>
+        </member>
+        <member name="M:Transforms.Transform.Power(System.Single,System.Int32)">
+            <summary> Multiplies value 't' by itself 'x' times. </summary>
+            <param name="t"> The value to be raised to a power. </param>
+            <param name="x"> The power to raise 't' to. </param>
+            <returns></returns>
+        </member>
+        <member name="M:Transforms.Transform.Abs(System.Single)">
+            <summary> Returns the absolute value of the given float. </summary>
+            <param name="a"> Float to get the absolute value of. </param>
+        </member>
+        <member name="M:Transforms.Transform.Min(System.Single,System.Single)">
+            <summary> If 't' is less than 'x', 't' is made equal to 'x'. </summary>
+            <param name="t"> Value to not allow to be less than 'x'. </param>
+            <param name="x"> Value which 't' is not allowed to be less than. </param>
+        </member>
+        <member name="M:Transforms.Transform.Max(System.Single,System.Single)">
+            <summary> If 't' is greater than 'x', 't' is made equal to 'x' </summary>
+            <param name="t"> Value to not allow to be greater than 'x'. </param>
+            <param name="x"> Value which 't' is not allowed to be greater than. </param>
+        </member>
+        <member name="M:Transforms.Transform.LinEq(System.Single,System.Single,System.Single)">
+            <summary> Uses a known linear equation to get a value. Returns 'f(x) = b + m*x' </summary>
+            <param name="x"> The 'x-value' to input into the equation. </param>
+            <param name="m"> The 'slope' of the equation. </param>
+            <param name="b"> The 'y-intercept' of the equation. </param>
+        </member>
+        <member name="M:Transforms.Transform.Lerp(System.Single,System.Single,System.Single)">
+            <summary> Returns an interpolated value between 'min' and 'max' </summary>
+            <param name="t"> Value to interpolate with. </param>
+            <param name="min"> Value to return when 't' equals 0. </param>
+            <param name="max"> Value to return when 't' equals 1. </param>
+        </member>
+        <member name="M:Transforms.Transform.InverseLinInterpolate(System.Single,System.Single,System.Single)">
+            <summary> Returns a value which represents the fraction between [min] and [max] that [a] is. </summary>
+            <param name="a"> Value between [min] and [max]. Note: if [a]&gt;[max], ret will be &gt;[1]. If [a]&lt;[min], ret will be &lt;[0]. </param>
+            <param name="min"> The minimum expected value for [a] to be. </param>
+            <param name="max"> The maximum expected value for [a] to be. </param>
+        </member>
+        <member name="M:Transforms.Transform.SmoothStartX(System.Single,System.Single)">
+            <summary> Returns a value which increases slowly at low values of 't', and more rapidly as 't' approaches 1. </summary>
+            <param name="t"> Value to apply 'SmoothStart' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.SmoothStartX(System.Single,System.Int32)">
+            <summary> Returns a value which increases slowly at low values of 't', and more rapidly as 't' approaches 1. </summary>
+            <param name="t"> Value to apply 'SmoothStart' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.SmoothStopX(System.Single,System.Single)">
+            <summary> Returns a value which increases rapidly at low values of 't', but more slowly as 't' approaches 1. </summary>
+            <param name="t"> Value to apply 'SmoothStop' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.SmoothStopX(System.Single,System.Int32)">
+            <summary> Returns a value which increases rapidly at low values of 't', but more slowly as 't' approaches 1. </summary>
+            <param name="t"> Value to apply 'SmoothStop' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.SmoothStepX(System.Single,System.Single)">
+            <summary> Returns a value which increases slowly when 't' is near 0 and 1, but increases rapidly when 't' is near 0.5. </summary>
+            <param name="t"> Value to apply 'SmoothStep' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.SmoothStepX(System.Single,System.Int32)">
+            <summary> Returns a value which increases slowly when 't' is near 0 and 1, but increases rapidly when 't' is near 0.5. </summary>
+            <param name="t"> Value to apply 'SmoothStep' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.ArchX(System.Single,System.Single)">
+            <summary> Returns a value which equals 0 when [t] equals 0 or 1, but returns 1 when [t] equals 0.5. </summary>
+            <param name="t"> Value to apply 'Arch' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.ArchX(System.Single,System.Int32)">
+            <summary> Returns a value which equals 0 when [t] equals 0 or 1, but returns 1 when [t] equals 0.5. </summary>
+            <param name="t"> Value to apply 'Arch' function to. </param>
+            <param name="pow"> Higher values for this parameter result in more dramatic curves. </param>
+        </member>
+        <member name="M:Transforms.Transform.LinEqGivenPoint_ToOne(System.Single,System.ValueTuple{System.Single,System.Single})">
+            <summary> Detemines a linear equation which touches points (x,y) and (1,1) and plugs in 't' as the 'x-value' to get the result. </summary>
+            <param name="t"></param>
+            <param name="p"></param>
+        </member>
+        <member name="M:Transforms.Transform.LinEqGivenPoint_FromZero(System.Single,System.ValueTuple{System.Single,System.Single})">
+            <summary> Detemines a linear equation which touches points (0,0) and (p.X,p.Y) and plugs in 't' to get the result. </summary>
+            <param name="t"> The interpolant value to use between the point (0,0) and the given point. </param>
+            <param name="point"> The other point to use when calculating the line from (0,0). </param>
+        </member>
+        <member name="M:Transforms.Transform.LinEqGivenPoints(System.Single,System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})">
+            <summary> Determines a linear equation which touches points (x1,y1) and (x2,y2) and plugs in 't' to get the result. Works outside the 0-1 domain. </summary>
+            <param name="t"> Value to plug into equation as 'x'. </param>
+            <param name="pointA"> One of the two points which the equation passes through. </param>
+            <param name="pointB"> The other of the two points which the equation passes through. </param>
+            <returns></returns>
+        </member>
+        <member name="M:Transforms.Transform.NormalizedBezierX(System.Single,System.Collections.Generic.List{System.Single})">
+            <summary> Returns the corresponding value of the normalized Bezier curve supplied via [vals] at x=[t].
+            <para> This method returns a 'normalized' value, meaning that when [t]=0, method returns 0, and when [t]=1, returns 1. </para></summary>
+            <param name="t"> Value to use as 'x' to get corresponding Bezier curve value. </param>
+            <param name="mids"> Collection of evenly spaced points between [0,1], exclusive, to form the Bezier curve from. </param>
+        </member>
+        <member name="M:Transforms.Transform.BezierX(System.Single,System.Collections.Generic.List{System.Single})">
+            <summary> Returns the corresponding value of the Bezier curve supplied via [vals] at x=[t]. </summary>
+            <param name="t"> Value to use as 'x' to get corresponding Bezier curve value. </param>
+            <param name="vals"> Collection of values spaced evenly between [0,1] (inclusive) which the Bezier curve will be formed from. </param>
+        </member>
+    </members>
+</doc>
