@@ -1,7 +1,0 @@
-D:\Visual Studio Projects\Transforms\bin\Release\Transforms.dll
-D:\Visual Studio Projects\Transforms\bin\Release\Transforms.pdb
-D:\Visual Studio Projects\Transforms\obj\Release\Transforms.csprojAssemblyReference.cache
-D:\Visual Studio Projects\Transforms\obj\Release\Transforms.csproj.CoreCompileInputs.cache
-D:\Visual Studio Projects\Transforms\obj\Release\Transforms.dll
-D:\Visual Studio Projects\Transforms\obj\Release\Transforms.pdb
-D:\Visual Studio Projects\Transforms\bin\Release\Transforms.xml
